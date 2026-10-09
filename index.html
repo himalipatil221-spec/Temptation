@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TEMPTATION — Street Burger Joint</title>
+<style>
+:root{--bg:#fff1c9;--ink:#141010;--red:#ff3b1f;--yel:#ffd400;--grn:#18c26a;--card:#fffaf0;--hs:6px 6px 0 var(--ink);--d:Impact,'Arial Black','Arial Narrow Bold',sans-serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:500 15px/1.6 'Trebuchet MS',system-ui,sans-serif;background-image:radial-gradient(#14101022 1.2px,transparent 1.2px);background-size:18px 18px}
+a{color:inherit}h1,h2,h3,.d{font-family:var(--d);font-weight:400;text-transform:uppercase;letter-spacing:.01em}
+header{position:sticky;top:0;z-index:50;background:var(--yel);border-bottom:4px solid var(--ink);display:flex;align-items:center;gap:14px;padding:10px 4vw;flex-wrap:wrap}
+.logo{font:400 30px/1 var(--d);text-decoration:none;background:var(--ink);color:var(--yel);padding:4px 12px;transform:rotate(-2deg);margin-right:auto}.logo b{color:var(--red)}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+nav a{text-decoration:none;font:700 13px var(--d);letter-spacing:.06em;text-transform:uppercase;padding:7px 14px;border:3px solid var(--ink);border-radius:99px;background:#fff;transition:.15s}
+nav a:hover,nav a.on{background:var(--ink);color:var(--yel);transform:translateY(-2px) rotate(-2deg)}
+nav a.cb{background:var(--red);color:#fff}nav a.cb span{background:#fff;color:var(--ink);border-radius:99px;padding:0 7px;margin-left:5px}
+.btn,button{font:400 16px var(--d);letter-spacing:.05em;text-transform:uppercase;background:var(--red);color:#fff;border:3px solid var(--ink);border-radius:12px;padding:10px 20px;cursor:pointer;box-shadow:4px 4px 0 var(--ink);text-decoration:none;display:inline-block;transition:.12s}
+.btn:hover,button:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}.btn:active,button:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.y{background:var(--yel);color:var(--ink)}.w{background:#fff;color:var(--ink)}.sm{font-size:13px;padding:6px 12px;box-shadow:3px 3px 0 var(--ink)}
+section.pg{display:none}section.pg.on{display:block;animation:pop .3s}@keyframes pop{from{opacity:0;transform:translateY(12px)}}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:4vw;align-items:center;padding:6vh 5vw 8vh;max-width:1300px;margin:auto}
+.hero h1{font-size:clamp(58px,10vw,138px);line-height:.86}.hero h1 em{font-style:normal;color:var(--red);-webkit-text-stroke:0;display:inline-block;transform:rotate(-3deg);background:var(--yel);border:4px solid var(--ink);padding:0 12px;box-shadow:var(--hs)}
+.hero p{font-size:18px;max-width:480px;margin:22px 0 26px;font-weight:600}
+.collage{position:relative;height:520px}
+.collage .f{position:absolute;border:5px solid var(--ink);box-shadow:var(--hs);background:var(--red) center/cover;border-radius:18px}
+.f1{width:68%;height:68%;right:0;top:0;transform:rotate(4deg)}.f2{width:46%;height:42%;left:0;bottom:6%;transform:rotate(-6deg)}.f3{width:40%;height:34%;right:4%;bottom:0;transform:rotate(3deg)}
+.stk{position:absolute;z-index:3;font:400 22px/1 var(--d);background:var(--yel);border:4px solid var(--ink);border-radius:50%;width:104px;height:104px;display:grid;place-items:center;text-align:center;text-transform:uppercase;left:30%;top:2%;transform:rotate(-12deg);box-shadow:4px 4px 0 var(--ink);animation:sp 6s ease-in-out infinite}
+@keyframes sp{50%{transform:rotate(8deg) scale(1.08)}}
+.mq{background:var(--ink);color:var(--yel);border-block:4px solid var(--ink);overflow:hidden;white-space:nowrap;transform:rotate(-1deg);margin:10px -2vw}
+.mq div{display:inline-block;animation:m 28s linear infinite}.mq span{font:400 26px var(--d);padding:12px 26px;text-transform:uppercase}.mq i{color:var(--red);font-style:normal}
+@keyframes m{to{transform:translateX(-50%)}}
+.wrap{max-width:1300px;margin:auto;padding:70px 5vw}
+.title{font-size:clamp(44px,7vw,92px);line-height:.9;margin-bottom:8px}.title span{background:var(--red);color:#fff;padding:0 10px;display:inline-block;transform:rotate(1.5deg);border:4px solid var(--ink)}
+.sub{font-weight:600;margin-bottom:28px;max-width:560px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:30px}
+.card{background:var(--card);border:4px solid var(--ink);border-radius:20px;box-shadow:var(--hs);overflow:hidden;transition:.2s;position:relative}
+.card:nth-child(odd):hover{transform:rotate(-1.5deg) translateY(-6px)}.card:nth-child(even):hover{transform:rotate(1.5deg) translateY(-6px)}
+.ph{position:relative;height:220px;background:repeating-linear-gradient(45deg,var(--yel) 0 14px,#ffe55c 14px 28px);display:grid;place-items:center;font-size:76px;border-bottom:4px solid var(--ink);overflow:hidden}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.4s}.card:hover .ph img{transform:scale(1.1) rotate(1deg)}
+.pr{position:absolute;top:12px;right:12px;z-index:2;background:var(--red);color:#fff;font:400 22px var(--d);border:3px solid var(--ink);border-radius:50%;width:70px;height:70px;display:grid;place-items:center;transform:rotate(10deg);box-shadow:3px 3px 0 var(--ink)}
+.bd{padding:16px 18px 18px}.bd h3{font-size:26px;line-height:1}.bd p{font-size:13px;margin:8px 0 12px;min-height:40px}
+.dot{display:inline-block;width:12px;height:12px;border:2px solid;margin-right:7px;border-radius:2px;position:relative;top:-3px}.dot.v{color:#1fa34a;background:radial-gradient(#1fa34a 40%,transparent 45%)}.dot.n{color:#c0392b;background:radial-gradient(#c0392b 40%,transparent 45%)}
+.ch{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}.ch span{background:var(--yel);border:2px solid var(--ink);border-radius:8px;padding:0 8px;font-size:12px;font-weight:800}
+.row{display:flex;gap:8px}.row button{flex:1;padding:8px 6px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}.tabs button{background:#fff;color:var(--ink)}.tabs button.on{background:var(--ink);color:var(--yel)}
+.band{background:var(--red);color:#fff;border:4px solid var(--ink);border-radius:24px;box-shadow:var(--hs);padding:44px 5vw;margin:0 5vw 70px;text-align:center;max-width:1300px}
+@media(min-width:1400px){.band{margin-inline:auto}}
+.band h2{font-size:clamp(34px,5.5vw,70px);line-height:.95}.band p{margin:10px 0 20px;font-weight:700}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
+.three div{background:#fff;border:4px solid var(--ink);border-radius:18px;padding:24px;box-shadow:var(--hs)}.three div:nth-child(2){background:var(--yel);transform:rotate(1.5deg)}.three div:nth-child(1){transform:rotate(-1.5deg)}.three b{font-size:40px;display:block}.three h3{font-size:26px}
+dialog{border:5px solid var(--ink);border-radius:22px;max-width:540px;width:92%;padding:0;background:var(--card);color:var(--ink);box-shadow:10px 10px 0 var(--ink);overflow:hidden}dialog::backdrop{background:#000b}dialog .ph{height:200px}dialog .in{padding:22px}dialog h2{font-size:38px;line-height:1}
+.bar{margin:10px 0;font-weight:800;font-size:13px;text-transform:uppercase}.bar i{display:block;height:14px;border:3px solid var(--ink);border-radius:8px;background:var(--red);margin-top:3px}
+.ing{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 18px}.ing span{border:2px solid var(--ink);border-radius:8px;padding:1px 10px;font-size:12px;background:#fff;font-weight:700}
+.ord{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:start}
+.tk{background:#fff;border:4px solid var(--ink);box-shadow:var(--hs);padding:26px;font-family:'Courier New',monospace;border-radius:6px;position:relative;clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),96% 100%,92% calc(100% - 12px),88% 100%,84% calc(100% - 12px),80% 100%,76% calc(100% - 12px),72% 100%,68% calc(100% - 12px),64% 100%,60% calc(100% - 12px),56% 100%,52% calc(100% - 12px),48% 100%,44% calc(100% - 12px),40% 100%,36% calc(100% - 12px),32% 100%,28% calc(100% - 12px),24% 100%,20% calc(100% - 12px),16% 100%,12% calc(100% - 12px),8% 100%,4% calc(100% - 12px),0 100%);padding-bottom:40px}
+.tk h3{font-size:30px;text-align:center;border-bottom:3px dashed var(--ink);padding-bottom:10px;margin-bottom:6px}
+.ci{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:2px dashed #14101055;font-weight:700}
+.q{display:flex;align-items:center;gap:8px}.q button{padding:0;width:28px;height:28px;box-shadow:2px 2px 0 var(--ink);font-size:16px}
+.tot div{display:flex;justify-content:space-between;padding:2px 0}.tot .g{font:400 30px var(--d);border-top:3px dashed var(--ink);margin-top:8px;padding-top:8px}
+.fm{background:var(--yel);border:4px solid var(--ink);border-radius:20px;box-shadow:var(--hs);padding:26px}.fm h3{font-size:32px;margin-bottom:8px}
+input,select,textarea{width:100%;padding:11px 13px;margin:4px 0 14px;border:3px solid var(--ink);border-radius:10px;background:#fff;font:inherit;font-weight:600}
+label{font:400 14px var(--d);letter-spacing:.06em;text-transform:uppercase}
+.ok{text-align:center;padding:90px 5vw}.ok b{font-size:80px;display:block}.ok h2{font-size:clamp(46px,8vw,100px);line-height:.9}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center}.pic{height:480px;border:5px solid var(--ink);border-radius:20px;box-shadow:var(--hs);transform:rotate(-2deg);background:var(--red) center/cover}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.st div{background:#fff;border:3px solid var(--ink);border-radius:14px;padding:10px;text-align:center}.st b{font:400 34px var(--d);display:block;color:var(--red)}
+footer{background:var(--ink);color:#fff;padding:40px 5vw 20px;border-top:4px solid var(--ink)}.fi{max-width:1300px;margin:auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer .d{font-size:50px;color:var(--yel);line-height:1}footer a{display:block;text-decoration:none;padding:2px 0;opacity:.8}footer h4{font:400 18px var(--d);color:var(--yel);margin-bottom:6px;letter-spacing:.06em}
+.cp{max-width:1300px;margin:24px auto 0;font-size:12px;opacity:.6}
+@media(max-width:820px){.hero,.ord,.about{grid-template-columns:1fr}.collage{height:380px}}
+</style><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EYDVDK8CN5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EYDVDK8CN5');
+</script>
+</head><body>
+<header><a class="logo" href="#home">TEMPT<b>ATION</b>🍔</a><nav><a href="#home" data-p="home">Home</a><a href="#burgers" data-p="burgers">Burgers</a><a href="#sides" data-p="sides">Sides &amp; Sips</a><a href="#about" data-p="about">About</a><a class="cb" href="#order" data-p="order">Cart<span id="cnt">0</span></a></nav></header>
+
+<section class="pg" id="home">
+<div class="hero"><div><h1>Feed the <em>craving.</em></h1><p>Smashed patties, crunchy chicken, loaded sides and mocktails that slap. Fresh, loud and ready in 30 minutes, with every calorie on the label.</p><a class="btn" href="#burgers">Order a burger</a> <a class="btn y" href="#sides">Sides &amp; sips</a></div>
+<div class="collage"><div class="f f1" id="c1"></div><div class="f f2" id="c2"></div><div class="f f3" id="c3"></div><div class="stk">100% fresh</div></div></div>
+<div class="mq"><div id="mq"></div></div>
+<div class="wrap"><h2 class="title">Crowd <span>favourites</span></h2><p class="sub">The three burgers everybody keeps coming back for.</p><div class="grid" id="fav"></div></div>
+<div class="wrap" style="padding-top:0"><div class="three"><div><b>🔥</b><h3>Cooked to order</h3><p>Nothing sits under a heat lamp. Ever.</p></div><div><b>📊</b><h3>Macros on show</h3><p>Calories, protein, carbs, fat on every item.</p></div><div><b>🍹</b><h3>Mocktail bar</h3><p>Mojitos, piña colada and more, zero alcohol.</p></div></div></div>
+<div class="band"><h2>Combo night ₹349</h2><p>Burger + fries + any drink · 6 PM to 10 PM daily</p><a class="btn y" href="#burgers">Build yours</a></div>
+</section>
+
+<section class="pg" id="burgers"><div class="wrap"><h2 class="title">The <span>burgers</span></h2><p class="sub">Tap "Info" for ingredients, calories and macros.</p><div class="tabs" id="ft"><button class="on" data-f="all">All</button><button data-f="1">Veg</button><button data-f="0">Non-veg</button></div><div class="grid" id="bgrid"></div></div></section>
+
+<section class="pg" id="sides"><div class="wrap"><h2 class="title">Sides <span>&amp; sips</span></h2><p class="sub">Crispy bites, cold drinks and zero-proof cocktails.</p><div class="tabs" id="st"><button class="on" data-t="s">Sides &amp; Bites</button><button data-t="d">Beverages</button><button data-t="m">Mocktails</button></div><div class="grid" id="sgrid"></div></div></section>
+
+<section class="pg" id="order"><div class="wrap"><h2 class="title">Your <span>order</span></h2><p class="sub">Check your cart, drop your address, done.</p><div class="ord"><div class="tk"><h3>🧾 Receipt</h3><div id="cart"></div><div class="tot" id="tot"></div></div><div class="fm"><h3>Where to?</h3><form id="f"><label>Name</label><input name="n" required><label>Phone</label><input name="p" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile"><label>Address</label><textarea name="a" rows="3" required></textarea><label>Payment</label><select><option>Cash on Delivery</option><option>UPI</option><option>Card on Delivery</option></select><button style="width:100%">Place order →</button></form></div></div></div></section>
+
+<section class="pg" id="about"><div class="wrap"><div class="about"><div class="pic" id="pic"></div><div><h2 class="title">Our <span>story</span></h2><p class="sub">Temptation started as a tiny cloud kitchen with one rule: no boring burgers and no secrets. We grind meat daily, bake buns every morning and print every calorie.</p><div class="st"><div><b>50k+</b>burgers</div><div><b>4.8★</b>rating</div><div><b>2022</b>since</div></div></div></div>
+<div class="ord" style="margin-top:70px"><div class="fm" style="background:#fff"><h3>Find us</h3><p>📍 12 Linking Road, Bandra West, Mumbai<br>📞 +91 98765 43210<br>✉️ hello@temptation.in<br>🕒 Daily 11 AM – 1 AM</p></div><div class="fm"><h3>Say hi</h3><form id="cf"><label>Name</label><input required><label>Message</label><textarea rows="3" required></textarea><button>Send</button></form></div></div></div></section>
+
+<footer><div class="fi"><div><div class="d">TEMPTATION</div><p style="opacity:.7">Street burgers. Zero secrets.</p></div><div><h4>EAT</h4><a href="#burgers">Burgers</a><a href="#sides">Sides &amp; Sips</a><a href="#order">Order</a></div><div><h4>FIND</h4><a>+91 98765 43210</a><a>hello@temptation.in</a><a>Bandra West, Mumbai</a></div></div><div class="cp">© 2026 Temptation. Photos via Unsplash.</div></footer>
+<dialog id="dlg"></dialog>
+
+<script>
+// Photos: edit the id after "photo-", or put your own path like "img/classic.jpg" in u:'...'
+const U=id=>id.includes('/')?id:`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=80`;
+const M=[
+{id:'b1',t:'b',v:0,n:'Classic Temptation',p:199,cal:540,pro:28,carb:42,fat:28,u:'1568901346375-23c9450c58cd',e:'🍔',d:'Smashed beef patty, melted cheddar, crisp lettuce and house sauce.',ing:['Brioche bun','Beef patty','Cheddar','Lettuce','Tomato','Pickles','House sauce']},
+{id:'b2',t:'b',v:0,n:'Double Cheese Stack',p:279,cal:820,pro:46,carb:44,fat:50,u:'1550547660-d9450f859349',e:'🍔',d:'Two patties, double cheddar, caramelised onions. Come hungry.',ing:['Brioche bun','2 Beef patties','Double cheddar','Caramelised onion','Mustard','Pickles']},
+{id:'b3',t:'b',v:0,n:'Spicy Inferno 🌶️',p:249,cal:610,pro:30,carb:46,fat:34,u:'1594212699903-ec8a3eca50f5',e:'🍔',d:'Crispy chicken, jalapeños, pepper jack and fiery sriracha mayo.',ing:['Sesame bun','Crispy chicken','Pepper jack','Jalapeños','Sriracha mayo','Lettuce']},
+{id:'b4',t:'b',v:0,n:'Smoky BBQ Bacon',p:299,cal:760,pro:40,carb:50,fat:42,u:'1553979459-d2229ba7433b',e:'🍔',d:'Beef patty, smoked bacon, onion and sweet hickory BBQ sauce.',ing:['Brioche bun','Beef patty','Bacon','Cheddar','BBQ sauce','Onion']},
+{id:'b5',t:'b',v:0,n:'Crispy Chicken Crunch',p:229,cal:580,pro:32,carb:48,fat:28,u:'1606755962773-d324e0a13086',e:'🍔',d:'Buttermilk-fried chicken with slaw and garlic mayo.',ing:['Potato bun','Fried chicken','Coleslaw','Garlic mayo','Pickles']},
+{id:'b6',t:'b',v:1,n:'Garden Veggie Delight',p:189,cal:470,pro:16,carb:58,fat:20,u:'1520072959219-c595dc870360',e:'🥬',d:'Veggie-and-bean patty, fresh greens, tomato and mint mayo.',ing:['Multigrain bun','Veg patty','Lettuce','Tomato','Cucumber','Mint mayo']},
+{id:'b7',t:'b',v:1,n:'Paneer Tikka Burger',p:219,cal:520,pro:22,carb:50,fat:26,u:'1571091718767-18b5b1457add',e:'🍔',d:'Tandoori paneer slab, onion, mint chutney and cheese.',ing:['Brioche bun','Paneer tikka','Cheese','Onion','Mint chutney','Lettuce']},
+{id:'s1',t:'s',v:1,n:'Classic Fries',p:99,cal:320,pro:4,carb:41,fat:16,u:'1573080496219-bb080dd4f877',e:'🍟',d:'Skin-on, salted, crispy. Regular portion.',ing:['Potato','Sea salt','Veg oil']},
+{id:'s2',t:'s',v:1,n:'Peri-Peri Cheese Fries',p:149,cal:480,pro:11,carb:46,fat:28,u:'1630384060421-cb20d0e0649d',e:'🧀',d:'Fries drowned in cheese sauce and peri-peri spice.',ing:['Potato','Cheese sauce','Peri-peri mix']},
+{id:'s3',t:'s',v:1,n:'Onion Rings',p:119,cal:360,pro:5,carb:44,fat:18,u:'1639024471283-03518883512d',e:'🧅',d:'Thick-cut rings in golden crisp batter.',ing:['Onion','Flour batter','Spices']},
+{id:'s4',t:'s',v:0,n:'Chicken Sticks (5)',p:179,cal:340,pro:24,carb:20,fat:18,u:'1626645738196-c2a7c87a8f58',e:'🍗',d:'Juicy chicken strips in a spiced crunchy coat with garlic dip.',ing:['Chicken breast','Spiced breadcrumb','Garlic dip']},
+{id:'s5',t:'s',v:0,n:'Chicken Popcorn',p:169,cal:310,pro:20,carb:22,fat:16,u:'1562967914-608f82629710',e:'🍿',d:'Bite-sized crispy chicken, tossed in peri-peri salt.',ing:['Chicken','Crispy coating','Peri-peri salt','Smoky dip']},
+{id:'s6',t:'s',v:0,n:'Chicken Nuggets (6)',p:149,cal:290,pro:17,carb:18,fat:17,u:'1619881589316-56c7f9e6b587',e:'🍗',d:'Six tender nuggets with a smoky dip.',ing:['Chicken','Breadcrumb','Smoky dip']},
+{id:'s7',t:'s',v:1,n:'Creamy Coleslaw',p:69,cal:150,pro:2,carb:12,fat:11,u:'1625938145744-e380515399bf',e:'🥗',d:'Cabbage and carrot in light mayo dressing.',ing:['Cabbage','Carrot','Mayo']},
+{id:'d1',t:'d',v:1,n:'Chocolate Milkshake',p:149,cal:420,pro:9,carb:58,fat:16,u:'1572490122747-3968b75cc699',e:'🥛',d:'Thick, creamy and chocolatey. 350 ml.',ing:['Milk','Ice cream','Cocoa']},
+{id:'d2',t:'d',v:1,n:'Iced Cold Coffee',p:119,cal:230,pro:6,carb:34,fat:8,u:'1461023058943-07fcbe16d735',e:'☕',d:'Brewed coffee blended with milk and ice. 300 ml.',ing:['Coffee','Milk','Ice','Sugar']},
+{id:'d3',t:'d',v:1,n:'Peach Iced Tea',p:99,cal:110,pro:0,carb:27,fat:0,u:'1556679343-c7306c1976bc',e:'🍑',d:'Black tea chilled with peach. 300 ml.',ing:['Black tea','Peach','Ice']},
+{id:'d4',t:'d',v:1,n:'Classic Cola',p:59,cal:140,pro:0,carb:35,fat:0,u:'1622483767028-3f66f32aef97',e:'🥤',d:'Ice-cold fizz. 330 ml.',ing:['Carbonated water','Sugar']},
+{id:'m1',t:'m',v:1,n:'Mojito',p:129,cal:120,pro:0,carb:30,fat:0,u:'1551538827-9c037cb4f32a',e:'🍹',d:'Muddled lime and mint with soda and crushed ice. Non-alcoholic.',ing:['Lime','Mint','Sugar syrup','Soda','Crushed ice']},
+{id:'m2',t:'m',v:1,n:'Mint Mojito',p:139,cal:110,pro:0,carb:28,fat:0,u:'1587223962930-cb7f31384c19',e:'🌿',d:'Extra-minty, extra-cold. Non-alcoholic.',ing:['Fresh mint','Lime','Sugar syrup','Soda','Ice']},
+{id:'m3',t:'m',v:1,n:'Watermelon Mojito',p:149,cal:130,pro:1,carb:32,fat:0,u:'1536935338788-846bb9981813',e:'🍉',d:'Watermelon juice, mint, lime and soda. Non-alcoholic.',ing:['Watermelon','Mint','Lime','Soda']},
+{id:'m4',t:'m',v:1,n:'Piña Colada',p:169,cal:290,pro:2,carb:44,fat:11,u:'1587223962930-cb7f31384c19',e:'🍍',d:'Pineapple, coconut cream and ice, blended smooth. Non-alcoholic.',ing:['Pineapple','Coconut cream','Ice','Cream']},
+{id:'m5',t:'m',v:1,n:'Blue Lagoon',p:159,cal:150,pro:0,carb:38,fat:0,u:'1536935338788-846bb9981813',e:'🌊',d:'Blue curaçao syrup, lemon and lemonade fizz. Non-alcoholic.',ing:['Blue curaçao syrup','Lemon','Lemonade','Ice']},
+{id:'m6',t:'m',v:1,n:'Virgin Sunrise',p:149,cal:160,pro:1,carb:40,fat:0,u:'1470337458703-46ad1756a187',e:'🌅',d:'Orange juice and grenadine, layered like a sunset. Non-alcoholic.',ing:['Orange juice','Grenadine','Ice']}];
+const B=Object.fromEntries(M.map(i=>[i.id,i])),$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const ph=i=>`<div class="ph"><span>${i.e}</span><img loading="lazy" src="${U(i.u)}" alt="${i.n}" onerror="this.remove()"></div>`;
+const card=i=>`<div class="card">${ph(i)}<div class="pr">₹${i.p}</div><div class="bd"><h3><i class="dot ${i.v?'v':'n'}"></i>${i.n}</h3><p>${i.d}</p><div class="ch"><span>🔥 ${i.cal} kcal</span><span>💪 ${i.pro}g protein</span></div><div class="row"><button class="w sm" onclick="info('${i.id}')">Info</button><button class="sm" onclick="add('${i.id}')">Add +</button></div></div></div>`;
+function info(id){const i=B[id],bar=(n,v,m)=>`<div class="bar">${n}: ${v}g<i style="width:${Math.max(3,Math.min(100,v/m*100))}%"></i></div>`;
+$('#dlg').innerHTML=`${ph(i)}<div class="in"><h2>${i.n}</h2><p>${i.d}</p><p style="margin:10px 0"><b class="d" style="font-size:46px;color:var(--red)">${i.cal}</b> kcal / serving</p>${bar('Protein',i.pro,50)}${bar('Carbs',i.carb,80)}${bar('Fat',i.fat,60)}<h3 style="margin-top:14px;font-size:20px">Ingredients</h3><div class="ing">${i.ing.map(x=>`<span>${x}</span>`).join('')}</div><button onclick="add('${i.id}');$('#dlg').close()">Add · ₹${i.p}</button> <button class="w" onclick="$('#dlg').close()">Close</button></div>`;$('#dlg').showModal()}
+let fl='all',tb='s';const lb=()=>$('#bgrid').innerHTML=M.filter(i=>i.t=='b'&&(fl=='all'||i.v==fl)).map(card).join(''),ls=()=>$('#sgrid').innerHTML=M.filter(i=>i.t==tb).map(card).join('');
+const tabs=(sel,k,fn)=>$$(sel+' button').forEach(b=>b.onclick=()=>{k(b);$$(sel+' button').forEach(x=>x.classList.toggle('on',x==b));fn()});
+tabs('#ft',b=>fl=b.dataset.f,lb);tabs('#st',b=>tb=b.dataset.t,ls);
+$('#fav').innerHTML=['b1','b2','b7'].map(i=>card(B[i])).join('');lb();ls();
+[['#c1','1568901346375-23c9450c58cd'],['#c2','1573080496219-bb080dd4f877'],['#c3','1551538827-9c037cb4f32a'],['#pic','1555396273-367ea4eb4db5']].forEach(([s,u])=>$(s).style.backgroundImage=`url("${U(u)}")`);
+$('#mq').innerHTML='<span>Smashed fresh <i>✸</i></span><span>Never frozen <i>✸</i></span><span>Mocktails on tap <i>✸</i></span><span>Free delivery ₹499+ <i>✸</i></span>'.repeat(8);
+let C={};const add=id=>{C[id]=(C[id]||0)+1;draw()},chg=(id,d)=>{C[id]+=d;if(C[id]<=0)delete C[id];draw()};
+function draw(){const k=Object.keys(C);$('#cnt').textContent=k.reduce((a,x)=>a+C[x],0);
+$('#cart').innerHTML=k.length?k.map(x=>`<div class="ci"><div>${B[x].n}<br><small>₹${B[x].p} ea</small></div><div class="q"><button class="w" onclick="chg('${x}',-1)">−</button>${C[x]}<button class="w" onclick="chg('${x}',1)">+</button></div>₹${B[x].p*C[x]}</div>`).join(''):'<p style="padding:20px 0">Cart is empty. <a href="#burgers" style="color:var(--red)"><b>Grab a burger →</b></a></p>';
+const s=k.reduce((a,x)=>a+B[x].p*C[x],0),g=Math.round(s*.05),d=!s||s>=499?0:40;
+$('#tot').innerHTML=s?`<div><span>Subtotal</span><span>₹${s}</span></div><div><span>GST 5%</span><span>₹${g}</span></div><div><span>Delivery</span><span>${d?'₹'+d:'FREE'}</span></div><div class="g"><span>TOTAL</span><span>₹${s+g+d}</span></div>`:''}
+$('#f').onsubmit=e=>{e.preventDefault();if(!Object.keys(C).length){alert('Add something to your cart first 🍔');return}
+const id='TMP'+Math.floor(1000+Math.random()*9000),n=e.target.n.value.replace(/[<>&]/g,'');C={};draw();
+$('#order').innerHTML=`<div class="ok"><b>🎉</b><h2>Order in!</h2><p style="margin:14px 0 24px;font-weight:700">Thanks ${n}! Order <b>#${id}</b> is on the grill.<br>Arrives in 30–40 minutes.</p><a class="btn" href="#home" onclick="setTimeout(()=>location.reload(),50)">Back home</a></div>`};
+$('#cf').onsubmit=e=>{e.preventDefault();e.target.reset();alert('Thanks! We will reply soon.')};
+const P=['home','burgers','sides','order','about'];
+function route(){const h=location.hash.slice(1),p=P.includes(h)?h:'home';$$('.pg').forEach(s=>s.classList.toggle('on',s.id==p));$$('nav a').forEach(a=>a.classList.toggle('on',a.dataset.p==p));scrollTo(0,0)}
+addEventListener('hashchange',route);route();draw();
+</script></body></html>
